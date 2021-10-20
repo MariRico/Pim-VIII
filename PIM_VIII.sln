@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidade", "Entidade\Entidade.csproj", "{CA3774CB-3698-4B58-A736-CF8008F49F32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{07FD7868-3297-4435-8597-6B7438697393}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA3774CB-3698-4B58-A736-CF8008F49F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA3774CB-3698-4B58-A736-CF8008F49F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA3774CB-3698-4B58-A736-CF8008F49F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA3774CB-3698-4B58-A736-CF8008F49F32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07FD7868-3297-4435-8597-6B7438697393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07FD7868-3297-4435-8597-6B7438697393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07FD7868-3297-4435-8597-6B7438697393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07FD7868-3297-4435-8597-6B7438697393}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E49CB689-07D3-4565-9247-1A3CDF0E37A2}
+	EndGlobalSection
+EndGlobal
