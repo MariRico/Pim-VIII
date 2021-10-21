@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maria\\source\\repos\\PIM_VIII\\Entidade\\Entidade.csproj",
+      "projectUniqueName": "C:\\Users\\maria\\Git\\PIM_VIII\\Entidade\\Entidade.csproj",
       "projectName": "Entidade",
-      "projectPath": "C:\\Users\\maria\\source\\repos\\PIM_VIII\\Entidade\\Entidade.csproj",
+      "projectPath": "C:\\Users\\maria\\Git\\PIM_VIII\\Entidade\\Entidade.csproj",
       "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maria\\source\\repos\\PIM_VIII\\Entidade\\obj\\",
+      "outputPath": "C:\\Users\\maria\\Git\\PIM_VIII\\Entidade\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

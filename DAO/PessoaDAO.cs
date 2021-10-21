@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PimVIII.Pessoa;
+﻿using PimVIII.Entidade;
 
 namespace PimVIII.DAO
 {
@@ -11,7 +6,10 @@ namespace PimVIII.DAO
     {
         public bool exclua(Pessoa p)
         {
+            bool retorno = false;
+            // Coloque o código aqui
 
+            return retorno;
         }
     }
 }
