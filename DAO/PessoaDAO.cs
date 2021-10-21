@@ -19,5 +19,13 @@ namespace PimVIII.DAO
 
             return retorno;
         }
+
+        public bool altere(Pessoa p)
+        {
+            bool retorno = false;
+            // Coloque o código aqui
+
+            return retorno;
+        }
     }
 }
