@@ -49,3 +49,4 @@ VALUES (1, 'Rua Girassol', 400, 13087420, 'Chácara Primavera', 'Campinas', 'SP')
 INSERT INTO ENDERECO (ID, LOGRADOURO, NUMERO, CEP, BAIRRO, CIDADE, ESTADO)
 VALUES (2, 'Rua das Hortências', 300, 13087420, 'Chácara Primavera', 'Campinas', 'SP')
 
+INSERT INTO PESSOA( ID, CPF, ENDERECO, NOME) VALUES(1,21521795878,1,'Teste');

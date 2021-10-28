@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidade", "Entidade\Entidade.csproj", "{CA3774CB-3698-4B58-A736-CF8008F49F32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidade", "Entidade\Entidade.csproj", "{CA3774CB-3698-4B58-A736-CF8008F49F32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{07FD7868-3297-4435-8597-6B7438697393}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAO", "DAO\DAO.csproj", "{07FD7868-3297-4435-8597-6B7438697393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste", "Teste\Teste.csproj", "{B464E018-F7CE-4F5A-A6A6-EA3B56DB46A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{07FD7868-3297-4435-8597-6B7438697393}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07FD7868-3297-4435-8597-6B7438697393}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07FD7868-3297-4435-8597-6B7438697393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B464E018-F7CE-4F5A-A6A6-EA3B56DB46A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B464E018-F7CE-4F5A-A6A6-EA3B56DB46A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B464E018-F7CE-4F5A-A6A6-EA3B56DB46A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B464E018-F7CE-4F5A-A6A6-EA3B56DB46A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
