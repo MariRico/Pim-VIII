@@ -22,7 +22,8 @@ namespace PimVIII.DAO
             bool retorno = false;
             // Coloque o código aqui
 
-            using (SqlCommand cmd = new SqlCommand("INSERT INTO PESSOA( ID, CPF, ENDERECO, NOME) VALUES(2,21521795878,1,'Teste2');", conexao))
+            using (SqlCommand cmd = new SqlCommand("INSERT INTO PESSOA( CPF, ENDERECO, NOME) " +
+                $"VALUES({p.cpf},{p.endereco},'{p.nome}');", conexao))
             {
                 conexao.Open(); // abre a conexão com o banco
                 cmd.ExecuteNonQuery(); // executa cmd
