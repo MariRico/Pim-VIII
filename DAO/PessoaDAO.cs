@@ -13,17 +13,20 @@ namespace PimVIII.DAO
         public bool exclua(Pessoa p)
         {
             bool retorno = false;
-            // Coloque o código aqui
-
+            using (SqlCommand cmd = new SqlCommand($"DELETE PESSOA WHERE CPF = {p.cpf};", conexao))
+            {
+                conexao.Open(); // abre a conexão com o banco
+                cmd.ExecuteNonQuery(); // executa cmd
+                conexao.Close();
+            }
             return retorno;
         }
 
         public bool insira(Pessoa p)
         {
             bool retorno = false;
-            // Coloque o código aqui
-
-            using (SqlCommand cmd = new SqlCommand($"INSERT INTO PESSOA( CPF, ENDERECO, NOME) VALUES({p.cpf},{p.endereco},'{p.nome}');", conexao))
+            int id = new EnderecoDAO(conexao).getId(p.endereco);
+            using (SqlCommand cmd = new SqlCommand($"INSERT INTO PESSOA( CPF, ENDERECO, NOME) VALUES({p.cpf},{id},'{p.nome}');", conexao))
             {
                 conexao.Open(); // abre a conexão com o banco
                 cmd.ExecuteNonQuery(); // executa cmd
@@ -57,33 +60,6 @@ namespace PimVIII.DAO
                 }
             }
             return pessoa;
-        }
-
-        private class EnderecoDAO
-        {
-            private SqlConnection conexao;
-            EnderecoDAO(SqlConnection pConexao)
-            {
-                conexao = pConexao;
-            }
-            public Endereco consulte(int intEndereco)
-            {
-                Endereco endereco = null;
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ENDERECO WHERE id = " + intEndereco, conexao);
-                using (var dr = cmd.ExecuteReader())
-                {
-                    if (dr.HasRows && dr.Read())
-                    {
-                        endereco.bairro = dr["bairro"].ToString();
-                        endereco.cep = Convert.ToInt32(dr["cep"]);
-                        endereco.cidade = dr["cidade"].ToString();
-                        endereco.estado = dr["estado"].ToString();
-                        endereco.logradouro = dr["logradouro"].ToString();
-                        endereco.numero = Convert.ToInt32(dr["numero"]);
-                    }
-                }
-                return endereco;
-            }
         }
     }
 }
