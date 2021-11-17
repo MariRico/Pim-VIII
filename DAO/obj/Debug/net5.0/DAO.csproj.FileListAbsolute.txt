@@ -12,3 +12,4 @@ C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.csproj.CoreCompileInputs.ca
 C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.dll
 C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\ref\DAO.dll
 C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.pdb
+C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.csproj.CopyComplete

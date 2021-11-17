@@ -12,27 +12,34 @@ namespace PimVIII.DAO
 
         public bool exclua(Pessoa p)
         {
-            bool retorno = false;
+            int nlinhas = 0;
             using (SqlCommand cmd = new SqlCommand($"DELETE PESSOA WHERE CPF = {p.cpf};", conexao))
             {
                 conexao.Open(); // abre a conexão com o banco
-                cmd.ExecuteNonQuery(); // executa cmd
+                nlinhas = cmd.ExecuteNonQuery(); // executa cmd
                 conexao.Close();
             }
-            return retorno;
+            return (nlinhas == 1);
         }
 
         public bool insira(Pessoa p)
         {
-            bool retorno = false;
-            int id = new EnderecoDAO(conexao).getId(p.endereco);
-            using (SqlCommand cmd = new SqlCommand($"INSERT INTO PESSOA( CPF, ENDERECO, NOME) VALUES({p.cpf},{id},'{p.nome}');", conexao))
+            int nlinhas = 0, idEndereco = 0;
+            conexao.Open(); // abre a conexão com o banco
+            EnderecoDAO enderecoDAO = new EnderecoDAO(conexao);
+            while (idEndereco == 0)
             {
-                conexao.Open(); // abre a conexão com o banco
-                cmd.ExecuteNonQuery(); // executa cmd
-                conexao.Close();
+                idEndereco = enderecoDAO.getId(p.endereco);
+                // Se nao tiver o registro então vamos inserir no banco de dados antes
+                if(idEndereco == 0)
+                    enderecoDAO.insira(p.endereco);
             }
-            return retorno;
+
+            using (SqlCommand cmd = new SqlCommand($"INSERT INTO PESSOA( CPF, ENDERECO, NOME) VALUES({p.cpf},{idEndereco},'{p.nome}');", conexao))
+                nlinhas = cmd.ExecuteNonQuery(); // executa cmd
+                
+            conexao.Close();
+            return (nlinhas == 1);
         }
 
         public bool altere(Pessoa p)
