@@ -9,14 +9,15 @@ namespace PimVIII.DAO
 {
     internal class EnderecoDAO
     {
-        private SqlConnection conexao;
-        protected internal EnderecoDAO(SqlConnection pConexao)
+        string strConnection = "Data Source=LAPTOP-SELTI3K7\\LOCAL1;Initial Catalog=PIM_VIII;User ID=sa;Password=123";
+        protected internal EnderecoDAO()
         {
-            conexao = pConexao;
         }
         public Endereco consulte(int intEndereco)
         {
-            Endereco endereco = null;
+            SqlConnection conexao = new(strConnection);
+            conexao.Open(); // abre a conexão com o banco
+            Endereco endereco = new();
             SqlCommand cmd = new SqlCommand("SELECT * FROM ENDERECO WHERE id = " + intEndereco, conexao);
             using (var dr = cmd.ExecuteReader())
             {
@@ -30,13 +31,15 @@ namespace PimVIII.DAO
                     endereco.numero = Convert.ToInt32(dr["numero"]);
                 }
             }
+            conexao.Close();
             return endereco;
         }
 
         public bool insira(Endereco endereco)
         {
             int nlinhas = 0;
-
+            SqlConnection conexao = new(strConnection);
+            conexao.Open();
             using (SqlCommand cmd = new SqlCommand(@$"
 INSERT INTO ENDERECO (
             LOGRADOURO, 
@@ -52,13 +55,15 @@ INSERT INTO ENDERECO (
             '{endereco.cidade}', 
             '{endereco.estado}');", conexao))
                 nlinhas = cmd.ExecuteNonQuery(); // executa cmd
-
+            conexao.Close();
             return (nlinhas == 1);
         }
 
         internal int getId(Endereco endereco)
         {
             int retorno = 0;
+            SqlConnection conexao = new(strConnection);
+            conexao.Open();
             SqlCommand cmd = new SqlCommand($@"
 SELECT id 
   FROM ENDERECO 
@@ -75,6 +80,7 @@ SELECT id
                     retorno = Convert.ToInt32(dr[0]);
                 }
             }
+            conexao.Close();
             return retorno;
         }
     }
