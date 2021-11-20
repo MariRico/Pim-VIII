@@ -2,13 +2,13 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Configuration;
 
 namespace PimVIII.DAO
 {
     public class PessoaDAO
     {
-        string strConnection = "Data Source=LAPTOP-SELTI3K7\\LOCAL1;Initial Catalog=PIM_VIII;User ID=sa;Password=123";
+        string strConnection = ConfigurationManager.ConnectionStrings["CharityManagement"].ConnectionString;
         public bool exclua(Pessoa p)
         {
             SqlConnection conexao = new(strConnection);

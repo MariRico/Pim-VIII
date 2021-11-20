@@ -1,3 +1,4 @@
+C:\Users\maria\Git\PIM_VIII\DAO\bin\Debug\net5.0\DAO.dll.config
 C:\Users\maria\Git\PIM_VIII\DAO\bin\Debug\net5.0\DAO.deps.json
 C:\Users\maria\Git\PIM_VIII\DAO\bin\Debug\net5.0\DAO.dll
 C:\Users\maria\Git\PIM_VIII\DAO\bin\Debug\net5.0\ref\DAO.dll
@@ -9,7 +10,7 @@ C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.GeneratedMSBuildEditorConfi
 C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.AssemblyInfoInputs.cache
 C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.AssemblyInfo.cs
 C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.csproj.CoreCompileInputs.cache
+C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.csproj.CopyComplete
 C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.dll
 C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\ref\DAO.dll
 C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.pdb
-C:\Users\maria\Git\PIM_VIII\DAO\obj\Debug\net5.0\DAO.csproj.CopyComplete

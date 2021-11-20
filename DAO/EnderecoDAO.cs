@@ -4,12 +4,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using PimVIII.Entidade;
+using System.Configuration;
 
 namespace PimVIII.DAO
 {
     internal class EnderecoDAO
     {
-        string strConnection = "Data Source=LAPTOP-SELTI3K7\\LOCAL1;Initial Catalog=PIM_VIII;User ID=sa;Password=123";
+        string strConnection = ConfigurationManager.ConnectionStrings["CharityManagement"].ConnectionString;
         protected internal EnderecoDAO()
         {
         }

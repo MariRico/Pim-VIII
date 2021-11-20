@@ -2,7 +2,6 @@ C:\Users\maria\Git\PIM_VIII\Entidade\bin\Debug\net5.0\Entidade.deps.json
 C:\Users\maria\Git\PIM_VIII\Entidade\bin\Debug\net5.0\Entidade.dll
 C:\Users\maria\Git\PIM_VIII\Entidade\bin\Debug\net5.0\ref\Entidade.dll
 C:\Users\maria\Git\PIM_VIII\Entidade\bin\Debug\net5.0\Entidade.pdb
-C:\Users\maria\Git\PIM_VIII\Entidade\obj\Debug\net5.0\Entidade.csproj.AssemblyReference.cache
 C:\Users\maria\Git\PIM_VIII\Entidade\obj\Debug\net5.0\Entidade.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\maria\Git\PIM_VIII\Entidade\obj\Debug\net5.0\Entidade.AssemblyInfoInputs.cache
 C:\Users\maria\Git\PIM_VIII\Entidade\obj\Debug\net5.0\Entidade.AssemblyInfo.cs
