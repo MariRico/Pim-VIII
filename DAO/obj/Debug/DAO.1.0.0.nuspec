@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>DAO</id>
+    <version>1.0.0</version>
+    <authors>DAO</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="Entidade" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Configuration.ConfigurationManager" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SqlClient" version="4.8.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\maria\Git\PIM_VIII\DAO\bin\Debug\net5.0\DAO.dll" target="lib\net5.0\DAO.dll" />
+  </files>
+</package>

@@ -45,10 +45,29 @@ namespace PimVIII.DAO
 
         public bool altere(Pessoa pessoa)
         {
+            int nlinhas = 0, idEndereco = 0;
             bool retorno = false;
-            
+            SqlConnection conexao = new(strConnection);
+            conexao.Open();
 
-            return retorno;
+            EnderecoDAO enderecoDAO = new();
+            while (idEndereco == 0)
+            {
+                idEndereco = enderecoDAO.getId(pessoa.endereco);
+                // Se nao tiver o registro então vamos inserir no banco de dados antes
+                if (idEndereco == 0)
+                    enderecoDAO.insira(pessoa.endereco);
+            }
+
+            using (SqlCommand cmd = new SqlCommand(@$"
+UPDATE PESSOA
+   SET ENDERECO = {idEndereco}, 
+       NOME = '{pessoa.nome}'
+ WHERE Cpf = '{pessoa.cpf}';", conexao))
+                nlinhas = cmd.ExecuteNonQuery(); // executa cmd
+
+            conexao.Close();
+            return (nlinhas == 1);
         }
 
         public Pessoa consulte(long cpf)
