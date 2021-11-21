@@ -14,33 +14,70 @@ namespace PimVIII.DAO
             SqlConnection conexao = new(strConnection);
             conexao.Open(); // abre a conexão com o banco
             int nlinhas = 0;
+
+            using (SqlCommand cmd = new SqlCommand($"DELETE PESSOA_TELEFONE " +
+                $"WHERE ID_PESSOA in (select id from pessoa where pessoa.cpf = '{p.cpf}');", conexao))
+                nlinhas = cmd.ExecuteNonQuery();
+
             using (SqlCommand cmd = new SqlCommand($"DELETE PESSOA WHERE CPF = {p.cpf};", conexao))
-                nlinhas = cmd.ExecuteNonQuery(); // executa cmd
+                nlinhas = cmd.ExecuteNonQuery();
                 
             conexao.Close();
             return (nlinhas == 1);
         }
 
-        public bool insira(Pessoa p)
+        public bool insira(Pessoa pessoa)
         {
             SqlConnection conexao = new(strConnection);
             conexao.Open(); // abre a conexão com o banco
             int nlinhas = 0, idEndereco = 0;
-            
-            EnderecoDAO enderecoDAO = new();
-            while (idEndereco == 0)
-            {
-                idEndereco = enderecoDAO.getId(p.endereco);
-                // Se nao tiver o registro então vamos inserir no banco de dados antes
-                if(idEndereco == 0)
-                    enderecoDAO.insira(p.endereco);
-            }
 
-            using (SqlCommand cmd = new SqlCommand($"INSERT INTO PESSOA( CPF, ENDERECO, NOME) VALUES({p.cpf},{idEndereco},'{p.nome}');", conexao))
+            idEndereco = InserirEndereco(pessoa);
+
+            using (SqlCommand cmd = new SqlCommand($"INSERT INTO PESSOA( CPF, ENDERECO, NOME) VALUES({pessoa.cpf},{idEndereco},'{pessoa.nome}');", conexao))
                 nlinhas = cmd.ExecuteNonQuery(); // executa cmd
-            
+
+            int idPessoa = 0;
+            using (SqlCommand cmd = new SqlCommand($"SELECT max(id) FROM PESSOA", conexao))
+                idPessoa = Convert.ToInt32(cmd.ExecuteScalar());
+
+            // Inserindo ou não o telefone
+            InserirTelefone(pessoa, idPessoa);
+
+
             conexao.Close();
             return (nlinhas == 1);
+        }
+
+        private static void InserirTelefone(Pessoa pessoa, int idPessoa)
+        {
+            TelefoneDAO telefoneDAO = new();
+            foreach (var item in pessoa.telefones)
+            {
+                int idTelefone = 0;
+                do
+                {
+                    idTelefone = telefoneDAO.getIdTelefone(item);
+                    if (idTelefone != 0)
+                        telefoneDAO.insira(idPessoa, item);
+                }
+                while (idTelefone == 0);
+            }
+        }
+
+        private static int InserirEndereco(Pessoa pessoa)
+        {
+            int idEndereco;
+            EnderecoDAO enderecoDAO = new();
+            do
+            {
+                idEndereco = enderecoDAO.getId(pessoa.endereco);
+                // Se nao tiver o registro então vamos inserir no banco de dados antes
+                if (idEndereco == 0)
+                    enderecoDAO.insira(pessoa.endereco);
+            }
+            while (idEndereco == 0);
+            return idEndereco;
         }
 
         public bool altere(Pessoa pessoa)
@@ -78,10 +115,9 @@ UPDATE PESSOA
             SqlCommand cmd = new SqlCommand("SELECT * FROM PESSOA WHERE CPF = " + cpf, conexao);
             using (var dr = cmd.ExecuteReader())
             {
-                
                 if (dr.HasRows && dr.Read())
                 {
-                    pessoa = new();
+                    pessoa = new(Convert.ToInt32(dr["id"]));
                     EnderecoDAO enderecoDAO = new();
 
                     pessoa.endereco = enderecoDAO.consulte(Convert.ToInt32(dr["endereco"]));

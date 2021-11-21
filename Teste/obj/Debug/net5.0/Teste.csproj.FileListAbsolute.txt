@@ -27,7 +27,6 @@ C:\Users\maria\Git\PIM_VIII\Teste\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.
 C:\Users\maria\Git\PIM_VIII\Teste\bin\Debug\net5.0\DAO.dll
 C:\Users\maria\Git\PIM_VIII\Teste\bin\Debug\net5.0\Entidade.dll
 C:\Users\maria\Git\PIM_VIII\Teste\bin\Debug\net5.0\DAO.pdb
-C:\Users\maria\Git\PIM_VIII\Teste\bin\Debug\net5.0\DAO.dll.config
 C:\Users\maria\Git\PIM_VIII\Teste\bin\Debug\net5.0\Entidade.pdb
 C:\Users\maria\Git\PIM_VIII\Teste\obj\Debug\net5.0\Teste.csproj.AssemblyReference.cache
 C:\Users\maria\Git\PIM_VIII\Teste\obj\Debug\net5.0\Teste.GeneratedMSBuildEditorConfig.editorconfig

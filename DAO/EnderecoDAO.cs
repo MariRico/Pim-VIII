@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using PimVIII.Entidade;
 using System.Configuration;
 
@@ -18,12 +15,13 @@ namespace PimVIII.DAO
         {
             SqlConnection conexao = new(strConnection);
             conexao.Open(); // abre a conexão com o banco
-            Endereco endereco = new();
+            Endereco endereco = null;
             SqlCommand cmd = new SqlCommand("SELECT * FROM ENDERECO WHERE id = " + intEndereco, conexao);
             using (var dr = cmd.ExecuteReader())
             {
                 if (dr.HasRows && dr.Read())
                 {
+                    endereco = new(Convert.ToInt32(dr["id"]));
                     endereco.bairro = dr["bairro"].ToString();
                     endereco.cep = Convert.ToInt32(dr["cep"]);
                     endereco.cidade = dr["cidade"].ToString();

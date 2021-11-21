@@ -9,3 +9,4 @@ C:\Users\maria\Git\PIM_VIII\Entidade\obj\Debug\net5.0\Entidade.csproj.CoreCompil
 C:\Users\maria\Git\PIM_VIII\Entidade\obj\Debug\net5.0\Entidade.dll
 C:\Users\maria\Git\PIM_VIII\Entidade\obj\Debug\net5.0\ref\Entidade.dll
 C:\Users\maria\Git\PIM_VIII\Entidade\obj\Debug\net5.0\Entidade.pdb
+C:\Users\maria\Git\PIM_VIII\Entidade\obj\Debug\net5.0\Entidade.csproj.AssemblyReference.cache

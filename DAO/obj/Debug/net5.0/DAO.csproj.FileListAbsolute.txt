@@ -1,4 +1,3 @@
-C:\Users\maria\Git\PIM_VIII\DAO\bin\Debug\net5.0\DAO.dll.config
 C:\Users\maria\Git\PIM_VIII\DAO\bin\Debug\net5.0\DAO.deps.json
 C:\Users\maria\Git\PIM_VIII\DAO\bin\Debug\net5.0\DAO.dll
 C:\Users\maria\Git\PIM_VIII\DAO\bin\Debug\net5.0\ref\DAO.dll
